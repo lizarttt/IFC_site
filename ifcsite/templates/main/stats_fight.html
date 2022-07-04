@@ -1,0 +1,56 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %} Cтатистика боёв{% endblock %}
+
+{% block content %}
+<br>
+<center>
+<h1 class="display-3">Статистика боёв</h1>
+</center>
+  <br>
+<div class="container">
+<table class="table table-hover">
+
+  <tbody>
+  {% for el in page_obj %}
+    <tr>
+      <th scope="row"><span class="badge badge-{{ el.type_fight }}">{{ el.status_fight }}</span></th>
+      <td width="20%">{{ el.name_1 }}</td>
+      <td><span class="badge badge-danger">VS</span></td>
+      <td>{{ el.name_2 }}</td>
+      <td><span class="font-weight-bold">{{ el.result }}</span></td>
+      <td><span class="badge badge-secondary">{{ el.type_education }} вес</span></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+<br>
+<div class="container">
+<center>
+    <div class="btn-group mr-2">
+
+        {% if page_obj.has_previous %}
+            <a href="?page=1" class="btn btn-outline-primary">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-secondary">{{ page_obj.previous_page_number }}</a>
+            <a href="" class="btn btn-outline-info">{{ page_obj.number }}</a>
+        {% else %}
+
+            <a href="" class="btn btn-outline-info">1</a>
+        {% endif %}
+
+
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-primary">{{ page_obj.next_page_number }}</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}" class="btn btn-outline-primary">last &raquo;</a>
+        {% endif %}
+
+    </span>
+</div>
+
+</div>
+
+<br>
+</center>
+{% endblock %}

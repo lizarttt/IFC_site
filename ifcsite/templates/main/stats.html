@@ -1,0 +1,64 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %} Карточка - {{ fighter.name }}{% endblock %}
+
+{% block content %}
+<br>
+<center>
+<h1 class="display-3">Карточка бойца</h1>
+</center>
+  <br>
+<div class="container">
+
+    <div class="card mb-3" >
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{ fighter.image.url }}" class="img-fluid rounded-start" alt="...">
+    </div>
+
+    <div class="col-md-8">
+      <div class="card-body">
+          <h2 class="text-muted">"{{ fighter.username }}" <span class="badge badge-secondary">{{ fighter.type_education }} вес</span></h2>
+          <h1 class="display-4">{{ fighter.name }}</h1>
+          <table class="table">
+
+  <thead>
+
+    <tr>
+      <th scope="col"><small class="text-muted"> Возраст</small> <h1>{{ fighter.years }}</h1></th>
+      <th scope="col"><small class="text-muted"> Рост</small> <h1>{{ fighter.growth }}</h1></th>
+      <th scope="col"><small class="text-muted"> Вес </small> <h1>{{ fighter.weight }}</h1></th>
+      <th scope="col"><small class="text-muted"> Длина рук </small> <h1>{{ fighter.arms }}</h1></th>
+      <th scope="col"><small class="text-muted"> Статистика (В-П-Н) </small> <h1>{{ fighter.stats }} </h1></th>
+    </tr>
+  </thead>
+
+    </table>
+        </CENTER>
+<a href=""><img src="{% static 'main/img/32.png' %}"></a>
+      </div>
+    </div>
+      </div>
+        </div>
+  <div class="card" >
+
+  <div class="card-body">
+
+    <small class="text-muted"> Статус </small>
+    <h5 class="card-title">Действующий боец BFA</h5>
+  <small class="text-muted"> Место рождения </small>
+    <h5 class="card-text">{{ fighter.geo }}</h5>
+
+
+
+  </div>
+  </div>
+    <table class="table">
+
+    </table>
+</div>
+
+</div
+</div>
+<br>
+{% endblock %}

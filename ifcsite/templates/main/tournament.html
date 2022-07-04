@@ -1,0 +1,70 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %} Турниры{% endblock %}
+{% block content %}
+
+<br>
+<center>
+<h2 class="display-3">Турниры</h2>
+    <br>
+
+
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <a class="btn btn-secondary" href="{% url 'tournament' %}"> Сначала старые </a>
+      <a class="btn btn-light" href="{% url 'tournament_sorted' %}"> Сначала новые </a>
+
+</div>
+    <br>
+        </center>
+    <div class="container">
+        <br>
+        {% for el in page_obj %}
+        <div class="card mb-3"  >
+  <div class="row g-0">
+    <div class="col-md-4">
+        <img src="{{ el.image.url }}" alt="connect" style="max-height:300px" class="img-fluid rounded-start">
+
+   </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h2>{{ el.title }}</h2>
+        <h5>{{ el.description }} </h5>
+        <p class="card-text">Геолокация - {{ el.geo }}</p>
+        <p class="card-text"><small class="text-muted">Дата публикации - {{ el.data }} {{ el.time }}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+</div>
+<div class="container">
+<center>
+    <div class="btn-group mr-2">
+
+        {% if page_obj.has_previous %}
+            <a href="?page=1" class="btn btn-outline-primary">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-secondary">{{ page_obj.previous_page_number }}</a>
+            <a href="" class="btn btn-outline-info">{{ page_obj.number }}</a>
+        {% else %}
+
+            <a href="" class="btn btn-outline-info">1</a>
+        {% endif %}
+
+
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-primary">{{ page_obj.next_page_number }}</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}" class="btn btn-outline-primary">last &raquo;</a>
+        {% endif %}
+
+    </span>
+</div>
+
+</div>
+
+<br>
+</center>
+<br>
+
+{% endblock %}

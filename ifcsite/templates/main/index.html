@@ -1,0 +1,77 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %} Главная{% endblock %}
+
+{% block content %}
+
+
+<div class="container my-5">
+    <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+        <h1 class="display-4 fw-bold lh-1">Добрый день!</h1>
+        <p class="lead"></p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+</div>
+      </div>
+      <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+          <img class="rounded-lg-3"  src="{% static 'main/img/23.jpg' %}" alt="" width="500px">
+      </div>
+    </div>
+  </div>
+<div class="container">
+        <!-- START THE FEATURETTES -->
+
+
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">Будь в курсе всех ивентов!</h2>
+            <p class="lead">Мы отслеживаем все ивенты и держим вас в курсе, когда они пройдут. С нашим веб-сайтом вы не пропустите,
+            ни одного турнира! Наша команда старается для вас. Так же вы можете посмотреть, какие турниры уже прошли. Мы их не
+            удаляем.</p>
+              <a type="button" href="{% url 'tournament' %}" class="btn btn-outline-info">Последние турниры</a>
+              <br>
+          </div>
+          <div class="col-md-5">
+            <img class="featurette-image img-fluid mx-auto"  src="{% static 'main/img/24.png' %}" alt="500x500" style="width: 500px; height: 500px;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22500%22%20height%3D%22500%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20500%20500%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1811ac379c1%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A25pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1811ac379c1%22%3E%3Crect%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22185.1171875%22%20y%3D%22261.1%22%3E500x500%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">Посмотри статистику своего любимого бойца! <span class="text-muted"></span></h2>
+            <p class="lead">Мы отслеживаем всех бойцов и показываем их статистику, если вам было интересна статистика вашего любимого
+            бойца, то на нашем сайте вы можете посмотреть её. Мы отслеживаем всех юных проспектов и показываем их статистику.
+            </p>
+                            <a type="button" href="{% url 'fighter' %}" class="btn btn-outline-info">Статистика бойцов</a>
+              <br>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img class="featurette-image img-fluid mx-auto" src="{% static 'main/img/26.jpg' %}" alt="500x500" style="width: 500px; height: 500px;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22500%22%20height%3D%22500%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20500%20500%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1811ac379c3%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A25pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1811ac379c3%22%3E%3Crect%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22185.1171875%22%20y%3D%22261.1%22%3E500x500%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">Следи за рейтингом только у нас.</h2>
+            <p class="lead">Наблюдайте за рейтингом только у нас на сайте. Мы обновляем рейтинг регулярно. Смотря нашу статистику, Вы
+            будете уверены на сто процентов в её актуальности.</p>
+              <a type="button" href="{% url 'raiting' %}" class="btn btn-outline-info">Актуальный рейтинг</a>
+          </div>
+          <div class="col-md-5">
+             <img class="featurette-image img-fluid mx-auto" src="{% static 'main/img/25.png' %}" alt="500x500" style="width: 500px; height: 500px;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22500%22%20height%3D%22500%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20500%20500%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1811ac379c3%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A25pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1811ac379c3%22%3E%3Crect%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22185.1171875%22%20y%3D%22261.1%22%3E500x500%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
+
+             </div>
+        </div>
+  <br>
+
+        <!-- /END THE FEATURETTES -->
+
+      </div>
+</div>
+
+{% endblock %}

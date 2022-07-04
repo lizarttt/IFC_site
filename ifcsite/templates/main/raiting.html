@@ -1,0 +1,55 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %} Рейтинг{% endblock %}
+{% block content %}
+<br>
+<center>
+<h1 class="display-3">Рейтинг</h1>
+</center>
+  <br>
+<div class="container">
+<div class="card">
+  <div class="card-body">
+    Рейтинг всех весовых категорий промоушена BFA.
+  </div>
+</div>
+<br>
+    <div class="card-group">
+
+{% for el in rait %}
+
+  <div class="card">
+    <div class="card-body">
+       <p class="text-danger">{{ el.weight }}</p>
+        <h2 class="card-title">{{ el.champion }}</h2>
+              <label class="text-muted">Champion</label>
+
+        <img class="card-img-top" src="{{ el.image.url }}" class="img-fluid">
+        <br>
+        <br>
+
+        <p class="card-text"><label class="font-weight-bold">1.</label> {{ el.one_fighter }}</p>
+
+        <p class="card-text"><label class="font-weight-bold">2.</label> {{ el.two_fighter }}</p>
+
+        <p class="card-text"><label class="font-weight-bold">3.</label> {{ el.three_fighter }}</p>
+
+        <p class="card-text"><label class="font-weight-bold">4.</label> {{ el.four_fighter }}</p>
+
+        <p class="card-text"><label class="font-weight-bold">5.</label> {{ el.five_fighter }}</p>
+
+
+    </div>
+  </div>
+
+
+{% endfor %}
+</div>
+
+  <br>
+
+  </div>
+
+<BR>
+<br>
+{% endblock %}
